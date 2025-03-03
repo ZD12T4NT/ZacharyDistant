@@ -1,0 +1,152 @@
+.image-wrapper {
+  height: auto;
+}
+
+.image-wrapper img {
+  border-radius: var(--border-radius);
+}
+
+.header-project {
+  padding: 84px 24px 0;
+}
+
+.project-page {
+  min-height: 100%;
+  height: auto;
+  background: image-set(url("/bgEffect.jpg"));
+  background: -webkit-image-set(url("/bgEffect.jpg"));
+  background: url("/bgEffect.jpg");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+}
+
+.heading .title,
+.heading .number {
+  font-family: "Questrial", serif;
+}
+
+.project-page {
+  position: relative;
+}
+
+.project-data {
+  padding-right: var(--left-right-internal-margin);
+}
+
+.project-data h6 {
+  padding-right: var(--left-right-internal-margin);
+  text-overflow: ellipsis;
+  overflow-x: clip;
+}
+
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  unicode-bidi: isolate;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  unicode-bidi: isolate;
+  border-color: inherit;
+}
+
+table td {
+  padding: 0 var(--left-right-internal-margin) var(--top-internal-margin) 0;
+}
+
+.project-content h6 {
+  font-variation-settings: "wght" 800, "wdth" 100;
+  margin: calc(var(--top-internal-margin) * 2) 0
+    calc(var(--top-internal-margin) / 2);
+  text-align: center;
+}
+
+.project-content-wrapper {
+  box-shadow: none;
+  margin-bottom: var(--top-internal-margin);
+  display: flex;
+  justify-content: center;
+}
+
+.project-content-image {
+  border-radius: var(--border-radius-content);
+  background-color: #606887;
+  background-color: var(--accentColorDark);
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.next-project-wrapper {
+  padding: var(--top-internal-margin) 0 var(--top-internal-margin);
+}
+
+.next-project-left {
+  padding-right: var(--left-right-internal-margin);
+}
+
+.next-project-selected:hover span {
+  margin-left: 0.7rem;
+  transition: all 300ms linear;
+}
+
+.next-project-right {
+  padding-left: var(--left-right-internal-margin);
+}
+
+.contact {
+  margin: 100px 20px 50px 20px;
+}
+
+@media (min-width: 992px) {
+  .image-wrapper {
+    height: calc(var(--innerVh, 1vh) * 75);
+  }
+  .image-wrapper img {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+
+  .header-project {
+    padding: 0 var(--left-right-margin) 0;
+  }
+
+  .project-intro {
+    margin: var(--top-internal-margin) var(--left-right-margin)
+      var(--top-internal-margin);
+  }
+
+  .project-description {
+    padding-left: var(--left-right-internal-margin);
+  }
+
+  .project-content {
+    padding: 0 var(--left-right-margin) 0;
+  }
+
+  .next-project {
+    padding: 0 var(--left-right-margin) 0;
+  }
+
+  .contact {
+    margin: 140px 240px 0;
+  }
+}
