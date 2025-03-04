@@ -12,11 +12,10 @@ const menuLinks = [
   { path: "/contact", label: "Contact" },
 ];
 
-export const NavMenu = () => {
+const NavMenu = () => {
   const container = useRef(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
-
   const tl = useRef<gsap.core.Timeline | null>(null);
 
   const toggleMenu = () => {
@@ -26,11 +25,7 @@ export const NavMenu = () => {
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
+      setScrolling(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -58,17 +53,17 @@ export const NavMenu = () => {
 
   useEffect(() => {
     if (tl.current) {
-      if (isMenuOpen) {
-        tl.current.play();
-      } else {
-        tl.current.reverse();
-      }
+      isMenuOpen ? tl.current.play() : tl.current.reverse();
     }
   }, [isMenuOpen]);
 
   return (
     <div className="menu-container" ref={container}>
-      <div className={`menu-bar ${scrolling ? "backdrop-blur-md bg-zinc-900 shadow-md" : "bg-transparent"} transition-all duration-300 fixed top-0 w-full`}>
+      <div
+        className={`menu-bar ${
+          scrolling ? "backdrop-blur-md bg-zinc-900 shadow-md" : "bg-transparent"
+        } transition-all duration-300 fixed top-0 w-full`}
+      >
         <div className="menu-logo">
           <Link href="/">InnoWeb Solutions</Link>
         </div>
@@ -79,13 +74,15 @@ export const NavMenu = () => {
       <div className={`menu-overlay z-20 ${isMenuOpen ? "open" : ""}`}>
         <div className="menu-overlay-bar">
           <div className="menu-logo open">
-            <Link href="/" onClick={toggleMenu}>InnoWeb Solutions</Link>
+            <Link href="/" onClick={toggleMenu}>
+              InnoWeb Solutions
+            </Link>
           </div>
           <div className="menu-close" onClick={toggleMenu}>
             <p>Close</p>
           </div>
         </div>
-        
+
         <div className="menu-copy">
           <div className="menu-links">
             {menuLinks.map((link, index) => (

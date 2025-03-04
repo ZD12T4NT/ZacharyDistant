@@ -1,96 +1,54 @@
-"use client";  // This tells Next.js this is a client-side component
+"use client";  // Ensures this is a client-side component
 
-import { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
-import Link from 'next/link';
+import { useEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { textRevealMotionFade } from "@/components/utils/animations";
 
 const images = [
-  {
-    alt: 'Kintec Global',
-    src: 'kintechome.png',
-    type: 'Web Build',
-    path: '/projects/projectOne'
-  },
-  {
-    alt: 'Spectrum IT',
-    src: 'spectrumhome.png',
-    type: 'Web Build',
-    path: '/projects/projectTwo'
-  },
-  {
-    alt: 'Sigmar Recruitment',
-    src: 'sigmarhome.png',
-    type: 'Web Build',
-    path: '/projects/projectThree'
-  },
-  {
-    alt: 'ROC Search',
-    src: 'rochome.png',
-    type: 'Web Build',
-    path: '/projects/projectFour'
-  },
-  {
-    alt: 'Integro Partners',
-    src: 'integrohome.png',
-    type: 'Web Build',
-    path: '/projects/projectFive'
-  },
-  {
-    alt: 'Barrington James',
-    src: 'barringtonhome.png',
-    type: 'Web Build',
-    path: '/projects/projectSix'
-  },
-  {
-    alt: 'MCS',
-    src: 'mcshome.png',
-    type: 'Web Build',
-    path: '/projects/projectSeven'
-  },
-  {
-    alt: 'Coltech',
-    src: 'coltecbuild.png',
-    type: 'Web Build',
-    path: '/projects/projectEight'
-  }
+  { alt: "Kintec Global", src: "kintechome.png", type: "Web Build", path: "/projects/projectOne" },
+  { alt: "Spectrum IT", src: "spectrumhome.png", type: "Web Build", path: "/projects/projectTwo" },
+  { alt: "Sigmar Recruitment", src: "sigmarhome.png", type: "Web Build", path: "/projects/projectThree" },
+  { alt: "ROC Search", src: "rochome.png", type: "Web Build", path: "/projects/projectFour" },
+  { alt: "Integro Partners", src: "integrohome.png", type: "Web Build", path: "/projects/projectFive" },
+  { alt: "Barrington James", src: "barringtonhome.png", type: "Web Build", path: "/projects/projectSix" },
+  { alt: "MCS", src: "mcshome.png", type: "Web Build", path: "/projects/projectSeven" },
+  { alt: "Coltech", src: "coltecbuild.png", type: "Web Build", path: "/projects/projectEight" },
 ];
 
 export default function ImageHoverComponent() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);  // Use undefined as initial state
+  const [windowWidth, setWindowWidth] = useState(() => (typeof window !== "undefined" ? window.innerWidth : 1024)); // ✅ Lazy Initialization
 
   const tl = useRef<gsap.core.Timeline | null>(null);
 
   useEffect(() => {
-    // Check if window is available (client-side)
-    if (typeof window !== "undefined") {
-      // Set the initial window width after the component is mounted
-      setWindowWidth(window.innerWidth);
+    if (typeof window === "undefined") return; // ✅ Prevent server-side execution
 
-      const handleResize = () => setWindowWidth(window.innerWidth);
+    const handleResize = () => setWindowWidth(window.innerWidth);
 
-      window.addEventListener("resize", handleResize);
-
-      return () => window.removeEventListener("resize", handleResize);
-    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const handleMouseEnter = (index: number) => {
-    setHoveredIndex(index);
-    gsap.to(`.image-${index}`, { opacity: 1, duration: 0.5 });
-    gsap.to(`.projects-selected-${index}`, { opacity: 1, x: 0, duration: 0.5 });
+    if (typeof window !== "undefined") {
+      setHoveredIndex(index);
+      gsap.to(`.image-${index}`, { opacity: 1, duration: 0.5 });
+      gsap.to(`.projects-selected-${index}`, { opacity: 1, x: 0, duration: 0.5 });
+    }
   };
 
   const handleMouseLeave = (index: number) => {
-    setHoveredIndex(null);
-    gsap.to(`.image-${index}`, { opacity: 0, duration: 0.5 });
-    gsap.to(`.projects-selected-${index}`, { opacity: 0, x: -20, duration: 0.5 });
+    if (typeof window !== "undefined") {
+      setHoveredIndex(null);
+      gsap.to(`.image-${index}`, { opacity: 0, duration: 0.5 });
+      gsap.to(`.projects-selected-${index}`, { opacity: 0, x: -20, duration: 0.5 });
+    }
   };
 
-  // Limit images to 3 if the screen width is below 1024px
-  const visibleImages = windowWidth && windowWidth < 1024 ? images.slice(0, 3) : images;
+  const visibleImages = windowWidth < 1024 ? images.slice(0, 3) : images;
 
   return (
     <motion.div className="overflow-hidden flex flex-col lg:flex-row h-screen w-full" initial="initial" animate="animate">
@@ -99,16 +57,11 @@ export default function ImageHoverComponent() {
           <motion.img
             initial={{ y: 30 }}
             animate={{
-              y: [0, -10, 10, 0], // Smooth floating motion
-              transition: {
-                delay: 0,
-                duration: 5, // Slow and consistent movement
-                ease: "linear", // Ensures constant speed
-                repeat: Infinity,
-              }
+              y: [0, -10, 10, 0],
+              transition: { delay: 0, duration: 5, ease: "linear", repeat: Infinity },
             }}
             src="/liquid-cube.png"
-            className='absolute top-[14rem] lg:top-0 left-0 object-contain bottom-0 right-0 flex m-auto justify-center align-center w-[20rem] h-full'
+            className="absolute top-[14rem] lg:top-0 left-0 object-contain bottom-0 right-0 flex m-auto justify-center align-center w-[20rem] h-full"
           />
         </div>
         {visibleImages.map((image, index) => (
@@ -123,36 +76,24 @@ export default function ImageHoverComponent() {
       </div>
       <div className="w-full overflow-y-scroll overflow-x-hidden lg:w-[45%] h-full flex flex-col justify-end items-start p-10 relative">
         <div className="heading leading-3 md:leading-tight flex flex-wrap align-bottom justify-between w-full lg:w-3/4 font-bold mb-[2rem]">
-          <motion.div className="font-[var(--main)] title text-[3.25rem] md:text-[5rem]" variants={textRevealMotionFade(0)}>WORK</motion.div>
-          <div className="number text-2xl">{visibleImages.length.toString().padStart(2, '0')}</div>
+          <motion.div className="font-[var(--main)] title text-[3.25rem] md:text-[5rem]" variants={textRevealMotionFade(0)}>
+            WORK
+          </motion.div>
+          <div className="number text-2xl">{visibleImages.length.toString().padStart(2, "0")}</div>
         </div>
         <hr className="seperator border-b-1 border-white w-full lg:w-3/4 border-solid" />
         {visibleImages.map((image, index) => (
-          <Link
-            href={image.path || '#'}
-            key={index}
-            onMouseEnter={() => handleMouseEnter(index)}
-            onMouseLeave={() => handleMouseLeave(index)}
-            className="capitalize project-title text-[1.6rem] font-bold cursor-pointer my-4 mt-3 w-full lg:w-3/4 flex justify-between items-center relative after:h-[1px] after:bg-white after:w-full after:content-[''] after:absolute after:bottom-[-15px] after:left-0 flex-wrap"
-          >
+          <Link href={image.path || "#"} key={index} onMouseEnter={() => handleMouseEnter(index)} onMouseLeave={() => handleMouseLeave(index)} className="capitalize project-title text-[1.6rem] font-bold cursor-pointer my-4 mt-3 w-full lg:w-3/4 flex justify-between items-center relative">
             <motion.div className="transition-all projects-selected-wrapper flex items-center">
-              <h4
-                className={`projects-selected projects-selected-${index} pr-[12px] ${
-                  hoveredIndex === index ? 'block' : 'hidden'
-                }`}
-                style={{ transform: hoveredIndex === index ? 'translateX(0)' : 'translateX(-20px)', opacity: hoveredIndex === index ? 1 : 0 }}
-              >
+              <h4 className={`projects-selected projects-selected-${index} pr-[12px]`} style={{ transform: hoveredIndex === index ? "translateX(0)" : "translateX(-20px)", opacity: hoveredIndex === index ? 1 : 0 }}>
                 →
               </h4>
               <div>{image.alt}</div>
             </motion.div>
-
-            <div className="project-type font-normal text-right relative">
-              {image.type}
-            </div>
+            <div className="project-type font-normal text-right relative">{image.type}</div>
           </Link>
         ))}
-        <Link href='projects/moreProjects' className='mt-3'>More Projects</Link>
+        <Link href="projects/moreProjects" className="mt-3">More Projects</Link>
       </div>
     </motion.div>
   );
