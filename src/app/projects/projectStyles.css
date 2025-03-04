@@ -134,6 +134,12 @@ table td {
       var(--top-internal-margin);
   }
 
+  .project-page .page-title {
+    margin: var(--top-internal-margin) var(--left-right-margin)
+      var(--top-internal-margin);
+    font-weight: 600;
+  }
+
   .project-description {
     padding-left: var(--left-right-internal-margin);
   }

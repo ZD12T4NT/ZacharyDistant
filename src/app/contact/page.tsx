@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { easings } from "@/components/utils/animations";
+import { easings, textRevealMotionFade } from "@/components/utils/animations";
 import SocialLinks from "@/components/nav-bar/SocialLinks";
 import "../projects/projectStyles.css";
 import ContactForm from "./contactForm";
@@ -29,9 +29,10 @@ const Page = () => {
 
   return (
     <div className="page-content overflow-hidden h-auto md:h-full w-full">
-      <motion.div className="contact flex flex-wrap lg:justify-between">
+      <motion.div className="contact flex flex-wrap lg:justify-between"
+      >
         <div className="left-side w-full lg:w-[60%] lg:pr-[1rem]">
-          <div className="page-head flex align-baseline flex-col">
+          <div className="page-head m-0 flex align-baseline flex-col">
             <div className="page-title w-full text-left m-0 text-ellipsis overflow-x-hidden text-[2rem] md:text-[3rem] lg:text-[4rem] xl:text-[7rem] leading-none overflow-hidden">
               LET'S <span className="lg:ml-[5rem] lg:block">GET IN</span> TOUCH
             </div>

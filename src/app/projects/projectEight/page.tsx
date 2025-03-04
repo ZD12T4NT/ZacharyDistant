@@ -11,7 +11,7 @@ export default function Page() {  // Make sure this is exported correctly!
       className="project-page  h-full w-full pointer-events-auto"
       initial="initial"
       animate="animate"
-      variants={textRevealMotionFade(0)}
+      variants={textRevealMotionFade(1)}
     >
       <div className="project relative h-auto overflow-y-hidden">
         <div className="header-project flex flex-col relative h-full">
@@ -36,18 +36,20 @@ export default function Page() {  // Make sure this is exported correctly!
           </div>
         </div>
 
-        <div className="project-title p-[2em] lg:p-0 text-[#008ecc]">
+        <div className="project-title p-[2em] lg:p-0 ">
           <div>
             <div className="page-head flex align-baseline">
-              <div className="page-title w-full text-left m-0 text-ellipsis overflow-x-hidden text-[3.24rem] md:text-[5rem] font-[var(--main)]">
-                Project
+              <div className="page-title w-full text-center m-0 text-ellipsis overflow-x-hidden text-[3.24rem] md:text-[5rem] font-[var(--main)] text-[#008ecc]">
+                Coltech 
               </div>
             </div>
-             <motion.hr 
+            <div className="next-project p-[2em] lg:p-0 w-full">
+            <motion.hr 
                          className="head-separator bg-white h-[2px] w-full"
                          initial={{ scaleX: 0, originX: 0 }}
                          animate={{ scaleX: 1, transition: { duration: 0.8, ease: easings.easeInOutQuint } }}
                        />
+            </div>
           </div>
           </div>
 
@@ -100,7 +102,7 @@ export default function Page() {  // Make sure this is exported correctly!
                          initial={{ scaleX: 0, originX: 0 }}
                          animate={{ scaleX: 1, transition: { duration: 0.8, ease: easings.easeInOutQuint } }}
                        />
-                <a href="/projects/projectTwo">
+                <a href="/projects/projectOne">
                 <div className="next-project-wrapper flex flex-row justify-between ">
                   <div className="next-project-left w-1/2">
                     <div className="next-project-selected-wrapper absolute overflow-hidden">
@@ -109,7 +111,7 @@ export default function Page() {  // Make sure this is exported correctly!
                      
                       </div>
                       <div className="next-project-right w-1/2 text-right">
-                        <h4>Spectrum IT</h4>
+                        <h4>Kintec Global</h4>
                         <p>Web Development</p>
                         </div>
                         </div>
