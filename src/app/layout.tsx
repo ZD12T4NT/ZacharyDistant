@@ -3,7 +3,6 @@ import "./globals.css";
 import NavMenu from "@/components/nav-bar/NavMenu";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import CustomCursor from "@/components/ui/CustomCursor";
-import SmoothScroll from "@/components/SmoothScroll"; // Import SmoothScroll
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -28,7 +27,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <NavMenu />
-          <SmoothScroll>{children}</SmoothScroll> {/* Wrap children */}
+          {children}
         </ThemeProvider>
       </body>
     </html>
