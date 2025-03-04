@@ -62,7 +62,7 @@ const Page = () => {
           </motion.p>
 
           {/* Resume Download Link */}
-          <motion.div 
+          {/* <motion.div 
             className="resume-link mt-[var(--top-internal-margin)]" 
             style={{ opacity: 1, transform: 'none' }} 
             variants={textRevealMotion(0.5)}
@@ -82,7 +82,7 @@ const Page = () => {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </motion.div>

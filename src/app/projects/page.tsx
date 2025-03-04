@@ -138,18 +138,19 @@ export default function ImageHoverComponent() {
             className="capitalize project-title text-[1.6rem] font-bold cursor-pointer my-4 mt-3 w-full lg:w-3/4 flex justify-between items-center relative after:h-[1px] after:bg-white after:w-full after:content-[''] after:absolute after:bottom-[-15px] after:left-0 flex-wrap"
           >
             <motion.div className="transition-all projects-selected-wrapper flex items-center">
-              <h4
-                className={`projects-selected projects-selected-${index} pr-[12px] ${
-                  hoveredIndex === index ? 'block' : 'hidden'
-                }`}
-                style={{ transform: hoveredIndex === index ? 'translateX(0)' : 'translateX(-20px)', opacity: hoveredIndex === index ? 1 : 0 }}
-              >
-                →
-              </h4>
+            <h4
+              className={`projects-selected projects-selected-${index} pr-[12px] ${
+                windowWidth && windowWidth < 1024 ? 'block' : hoveredIndex === index ? 'block' : 'hidden'
+              }`}
+              style={{ transform: windowWidth && windowWidth < 1024 ? 'translateX(0)' : hoveredIndex === index ? 'translateX(0)' : 'translateX(-20px)', opacity: windowWidth && windowWidth < 1024 ? 1 : hoveredIndex === index ? 1 : 0 }}
+            >
+              →
+            </h4>
+
               <div>{image.alt}</div>
             </motion.div>
 
-            <div className="project-type font-normal text-right relative">
+            <div className="hidden md:block project-type font-normal text-right relative">
               {image.type}
             </div>
           </Link>
