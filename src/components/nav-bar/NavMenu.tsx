@@ -88,7 +88,7 @@ const NavMenu = () => {
             {menuLinks.map((link, index) => (
               <div className="menu-link-item mb-7" key={index}>
                 <div className="menu-link-item-holder" onClick={toggleMenu}>
-                  <Link href={link.path} className="uppercase menu-link transition-all">
+                  <Link href={link.path} className="uppercase menu-link transition-all ">
                     <span>{link.label}</span>
                   </Link>
                 </div>

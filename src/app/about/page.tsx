@@ -8,7 +8,7 @@ import { easings, textRevealMotion, textRevealMotionFade } from "@/components/ut
 const Page = () => {
   return (
     <motion.div 
-      className="page-content relative flex h-screen w-full pointer-events-auto pr-[0]"
+      className="page-content about-page relative justify-center md:justify-start flex h-screen w-full pointer-events-auto pr-[0]"
       initial="initial"
       animate="animate"
     >

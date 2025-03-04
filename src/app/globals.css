@@ -93,14 +93,12 @@ h1 sup {
   }
 }
 
-@layer base {
+.about-page {
+  align-items: center;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
+@media (min-width: 992px) {
+  .about-page {
+    align-items: start;
   }
 }

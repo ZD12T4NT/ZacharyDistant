@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import ExploreButton from "@/components/ui/ExploreButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { easings, textRevealMotion } from "@/components/utils/animations";
+import ContactButton from "@/components/ui/ContactButton";
 
 const Page = () => {
   const images = [
@@ -114,7 +115,10 @@ const Page = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
                 amet sint. Sapiente alias eius quam?
               </p>
-              <ExploreButton homeLinks={[]} />
+             <div className="links flex flex-wrap">
+             <ExploreButton className="mr-6" />
+             <ContactButton />
+             </div>
             </div>
           </motion.div>
         </div>
