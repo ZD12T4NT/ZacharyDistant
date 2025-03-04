@@ -22,9 +22,10 @@ const Page = () => {
     const interval = setInterval(() => {
       setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000); // Change image every 5 seconds
-
+  
     return () => clearInterval(interval); // Cleanup interval on unmount
-  }, []);
+  }, [currentImage, images]); // Add currentImage and images as dependencies
+  
 
   return (
     <section className="relative no-scroll flex flex-col p-[2rem] translate-y-1/3 md:translate-y-[20%]">

@@ -34,7 +34,7 @@ const Page = () => {
         <div className="left-side w-full lg:w-[60%] lg:pr-[1rem]">
           <div className="page-head m-0 flex align-baseline flex-col">
             <div className="page-title w-full text-left m-0 text-ellipsis overflow-x-hidden text-[2rem] md:text-[3rem] lg:text-[4rem] xl:text-[7rem] leading-none overflow-hidden">
-              LET'S <span className="lg:ml-[5rem] lg:block">GET IN</span> TOUCH
+              LET&apos;S <span className="lg:ml-[5rem] lg:block">GET IN</span> TOUCH
             </div>
             <motion.hr
               className="head-separator mt-[1rem] md:mt-[3rem] bg-white h-[2px] w-full"

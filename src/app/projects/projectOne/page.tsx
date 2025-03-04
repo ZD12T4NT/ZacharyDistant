@@ -83,7 +83,7 @@ export default function Page() {  // Make sure this is exported correctly!
                                           </tbody>
                                           </table>
                                           </div>
-          <div className="project-description w-full md:w-1/2 " ><p>The Kintec Global website is designed to streamline recruitment by connecting top talent with leading international sectors. With a user-friendly interface and intuitive navigation, it provides a seamless experience for job seekers and employers alike. The platform highlights Kintec's expertise, values, and meticulous approach to recruitment, reinforcing their reputation as industry leaders.</p>
+          <div className="project-description w-full md:w-1/2 " ><p>The Kintec Global website is designed to streamline recruitment by connecting top talent with leading international sectors. With a user-friendly interface and intuitive navigation, it provides a seamless experience for job seekers and employers alike. The platform highlights Kintec&apos;s expertise, values, and meticulous approach to recruitment, reinforcing their reputation as industry leaders.</p>
           </div>
           </div>
 
