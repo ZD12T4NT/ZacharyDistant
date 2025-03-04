@@ -4,9 +4,6 @@ import React, { useState, useEffect } from "react";
 import ExploreButton from "@/components/ui/ExploreButton";
 import { motion, AnimatePresence } from "framer-motion";
 import { easings, textRevealMotion } from "@/components/utils/animations";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
-import { Tilt } from '@/components/ui/tilt'
 
 
 export const page = () => {
