@@ -39,8 +39,10 @@ export default function Page() {  // Make sure this is exported correctly!
         <div className="project-title p-[2em] lg:p-0 ">
           <div>
             <div className="page-head flex align-baseline">
-              <div className="page-title w-full m-0 text-ellipsis overflow-x-hidden text-[2rem] sm:text-[3.24rem] md:text-[5rem] text-left md:text-center font-[var(--main)] text-[#008ecc]">
-                Coltech 
+            <div className="page-title w-full m-0 text-left md:text-center">
+                <a href="https://www.coltech.io/" className="text-[2rem] sm:text-[3.24rem] md:text-[5rem]  font-[var(--main)] text-[#008ecc] text-ellipsis overflow-x-hidden " target="_blank">
+                Coltec
+                </a>
               </div>
             </div>
             <div className="next-project p-0 md:p-[2em] lg:p-0 w-full">

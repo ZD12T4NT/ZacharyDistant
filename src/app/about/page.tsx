@@ -56,9 +56,12 @@ const Page = () => {
             className="presentation-text mt-[var(--top-internal-margin)] w-full md:w-3/4 opacity-full transform-none md:text-[1.5rem] font-normal"
             variants={textRevealMotion(0.3)}
           >
-            Hey, I’m Zac, a front-end web developer with a strong background in UX/UI design and graphic design. 
+            Hi, my name is Zac, a front-end web developer with a strong background in UX/UI design.
             I’m passionate about creating engaging digital experiences and always exploring new technologies. 
             Outside of coding, I love to hit the gym, spend quality time with family and make the most of my opportunities.
+            <br />
+            <br />
+            <span className='md:text-[1.2rem]'> CV Available on Request</span>
           </motion.p>
 
           {/* Resume Download Link */}
@@ -83,6 +86,26 @@ const Page = () => {
               </div>
             </div>
           </motion.div> */}
+      <motion.div 
+            className="resume-link mt-[var(--top-internal-margin)]" 
+            style={{ opacity: 1, transform: 'none' }} 
+            variants={textRevealMotion(0.5)}
+          >
+            <div className="link-wrapper w-fit overflow-x-hidden">
+              <div className="link w-auto mb-[3px] whitespace-nowrap">
+                <a 
+                  href="/contact" 
+                  rel="noreferrer" 
+                  className="text-[1rem] relative before:absolute before:bottom-[-0.25rem] before:h-[1px] 
+                  before:w-full before:max-w-[0px] before:bg-white before:transition-all before:content-[''] 
+                  hover:before:max-w-full" 
+                >
+                  Get in touch
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </motion.div>

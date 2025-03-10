@@ -155,7 +155,9 @@ export default function ImageHoverComponent() {
             </div>
           </Link>
         ))}
-        <Link href='projects/moreProjects' className='mt-3'>More Projects</Link>
+        <Link href='projects/moreProjects' className="mt-3 text-[1.2rem] relative before:absolute before:bottom-[-0.25rem] before:h-[1px] 
+                  before:w-full before:max-w-[0px] before:bg-white before:transition-all before:content-[''] 
+                  hover:before:max-w-full">More Projects <span>→</span></Link>
       </div>
     </motion.div>
   );

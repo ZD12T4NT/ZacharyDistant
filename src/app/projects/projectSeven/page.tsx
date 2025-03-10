@@ -39,8 +39,10 @@ export default function Page() {  // Make sure this is exported correctly!
         <div className="project-title p-[2em] lg:p-0 ">
           <div>
             <div className="page-head flex align-baseline">
-              <div className="page-title w-full  m-0 text-ellipsis overflow-x-hidden text-[2rem] sm:text-[3.24rem] md:text-[5rem] text-left md:text-center font-[var(--main)] text-[#ff6900]">
+            <div className="page-title w-full m-0 text-left md:text-center">
+                <a href="https://www.mcsgroup.jobs/" className="text-[2rem] sm:text-[3.24rem] md:text-[5rem]  font-[var(--main)] text-[#ff6900] text-ellipsis overflow-x-hidden " target="_blank">
                 MCS Group
+                </a>
               </div>
             </div>
             <div className="next-project p-0 md:p-[2em] lg:p-0 w-full">

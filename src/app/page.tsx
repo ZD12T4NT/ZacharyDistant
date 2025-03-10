@@ -94,7 +94,7 @@ const Page = () => {
           >
             <div className="sub-heading w-full flex align-top">
               <span className="text-white/10 text-[1.3rem] leading-none">
-                my purpose
+                what we do
               </span>
             </div>
           </motion.div>
@@ -110,12 +110,11 @@ const Page = () => {
               },
             }}
           >
-            <div className="desc w-full md:w-[60%] mt-[1.3rem] md:mt-0 m-auto mb-5">
+            <div className="desc w-full md:w-auto mt-[1.3rem] md:mt-0 m-auto mb-5">
               <p className="font-normal">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque,
-                amet sint. Sapiente alias eius quam?
+                building exceptional websites for you or your business.
               </p>
-             <div className="links flex flex-wrap">
+             <div className="links flex ">
              <ExploreButton className="mr-6" />
              <ContactButton />
              </div>
