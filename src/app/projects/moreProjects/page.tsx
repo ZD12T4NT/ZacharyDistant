@@ -20,20 +20,24 @@ const images = [
   { image: "/sentinelit.png", link: "https://www.sentinelit.com/", name: "Sentinel IT" },
   
   { image: "/oho.png", link: "https://www.oho.co.uk/", name: "Oho Recruitment" },
-  
-  // { image: "/oho.png", link: "https://www.cplhealthcare.com/", name: "CPL Healthcare" },
 
-  // { image: "/oho.png", link: "https://www.kenny-whelan.ie/", name: "Kenny Whelan - A cpl cpmpany" },
+  { image: "/warmanobrien.png", link: "https://www.warmanobrien.com/", name: "Warman O'Brien" },
 
-  // { image: "/oho.png", link: "https://www.cyberneticsearch.com/", name: "Cybernetic Search" },
+  { image: "/cpl.png", link: "https://www.cplhealthcare.com/", name: "CPL Healthcare" },
 
-  // { image: "/oho.png", link: "https://www.understandingsolutions.com/", name: "Understanding Solutions" },
+  { image: "/kennywhelan.png", link: "https://www.kenny-whelan.ie/", name: "Kenny Whelan - A cpl cpmpany" },
 
-  // { image: "/oho.png", link: "https://three-d-personnel.staging.wearevennture.co.uk/", name: "3D Personnel" },
+   // { image: "/fruitiongroup.png", link: "https://fruition-group.staging.wearevennture.co.uk/", name: "Fruition Group" },
 
-  // { image: "/oho.png", link: "https://zanda-search.staging.wearevennture.co.uk/", name: "Zanda Search" },
+  { image: "/cybernetic.png", link: "https://www.cyberneticsearch.com/", name: "Cybernetic Search" },
 
-  // { image: "/oho.png", link: "https://first-point-group-v2.staging.wearevennture.co.uk/", name: "First Point Group" },
+  { image: "/understandingsolutions.png", link: "https://www.understandingsolutions.com/", name: "Understanding Solutions" },
+
+  // { image: "/3dpersonnel.png", link: "https://three-d-personnel.staging.wearevennture.co.uk/", name: "3D Personnel" },
+
+  // { image: "/zandasearch.png", link: "https://zanda-search.staging.wearevennture.co.uk/", name: "Zanda Search" },
+
+  // { image: "/firstpointgroup.png", link: "https://first-point-group-v2.staging.wearevennture.co.uk/", name: "First Point Group" },
 
 ];
 
