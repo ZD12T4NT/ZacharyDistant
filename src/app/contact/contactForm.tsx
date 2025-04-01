@@ -50,17 +50,17 @@ const ContactForm = () => {
     <form onSubmit={sendEmail} className="contact-form flex flex-col gap-4">
       <div className="form-group flex flex-col">
         <label htmlFor="name" className='text-white'>Name</label>
-        <input placeholder='text-white/30' className="text-white form-textarea p-[0.8rem] bg-transparent border-b-2 border-b-white resize-y min-h-[50px]" type="text" id="name" name="name" onChange={handleChange} required />
+        <input placeholder='Name' className="text-white form-textarea p-[0.8rem] bg-transparent border-b-2 border-b-white resize-y min-h-[50px]" type="text" id="name" name="name" onChange={handleChange} required />
       </div>
 
       <div className="form-group flex flex-col">
         <label htmlFor="email" className='text-white'>Email</label>
-        <input placeholder='text-white/30' className="text-white form-textarea p-[0.8rem] border-b-2 bg-transparent border-b-white resize-y min-h-[50px]" type="email" id="email" name="email" onChange={handleChange} required />
+        <input placeholder='Email' className="text-white form-textarea p-[0.8rem] border-b-2 bg-transparent border-b-white resize-y min-h-[50px]" type="email" id="email" name="email" onChange={handleChange} required />
       </div>
 
       <div className="form-group flex flex-col">
         <label htmlFor="message" className='text-white'>Message</label>
-        <textarea placeholder='text-white/30' className="form-textarea text-white p-[0.8rem] border-b-2 bg-transparent border-b-white resize-y min-h-[100px]" id="message" name="message" onChange={handleChange} required />
+        <textarea placeholder='Message' className="form-textarea text-white p-[0.8rem] border-b-2 bg-transparent border-b-white resize-y min-h-[100px]" id="message" name="message" onChange={handleChange} required />
       </div>
 
       <button type="submit" className='submit-button flex justify-center transition-all relative w-full md:w-auto bg-[#a7ec51] py-[.7rem] px-[2rem] rounded-[100em] text-black hover:bg-black hover:text-white' disabled={isSubmitting}>
