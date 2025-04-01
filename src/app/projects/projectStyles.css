@@ -119,6 +119,10 @@ table td {
   margin: 100px 20px 50px 20px;
 }
 
+.project-content h6 {
+  color: #fff;
+}
+
 @media (min-width: 992px) {
   .image-wrapper {
     height: calc(var(--innerVh, 1vh) * 75);
@@ -134,10 +138,6 @@ table td {
   .project-intro {
     margin: var(--top-internal-margin) var(--left-right-margin)
       var(--top-internal-margin);
-  }
-
-  .project-content h6 {
-    color: #fff;
   }
 
   .project-page .page-title {
