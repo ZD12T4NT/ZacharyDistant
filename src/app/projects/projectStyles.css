@@ -73,7 +73,9 @@ table td {
 }
 
 .project-content h6 {
-  font-variation-settings: "wght" 800, "wdth" 100;
+  font-variation-settings:
+    "wght" 800,
+    "wdth" 100;
   margin: calc(var(--top-internal-margin) * 2) 0
     calc(var(--top-internal-margin) / 2);
   text-align: center;
@@ -132,6 +134,10 @@ table td {
   .project-intro {
     margin: var(--top-internal-margin) var(--left-right-margin)
       var(--top-internal-margin);
+  }
+
+  .project-content h6 {
+    color: #fff;
   }
 
   .project-page .page-title {

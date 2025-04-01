@@ -125,7 +125,7 @@ export default function ImageHoverComponent() {
       </div>
       <div className="w-full overflow-y-scroll overflow-x-hidden lg:w-[45%] h-full flex flex-col justify-end items-start p-10 relative">
         <div className="heading leading-3 md:leading-tight flex flex-wrap align-bottom justify-between w-full lg:w-3/4 font-bold mb-[2rem]">
-          <motion.div className="font-[var(--main)] title text-[3.25rem] md:text-[5rem]" variants={textRevealMotionFade(0)}>WORK</motion.div>
+          <motion.div className="font-[var(--main)] title text-[3.25rem] md:text-[5rem] text-white" variants={textRevealMotionFade(0)}>WORK</motion.div>
           <div className="number text-2xl">{visibleImages.length.toString().padStart(2, '0')}</div>
         </div>
         <hr className="seperator border-b-1 border-white w-full lg:w-3/4 border-solid" />

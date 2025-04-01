@@ -39,7 +39,7 @@ const Page = () => {
           <motion.div initial="initial" animate="animate" style={{ opacity: 1, transform: 'none' }}>
             <div className="page-head flex align-middle">
               <motion.h2 
-                className="page-title w-full uppercase text-left m-0 text-ellipsis overflow-x-hidden text-[2rem] md:text-[5rem]"
+                className="page-title w-full uppercase text-left m-0 text-ellipsis overflow-x-hidden text-[2rem] md:text-[5rem] text-white"
                 variants={textRevealMotionFade(0)}
               >
                 About
