@@ -65,7 +65,7 @@ const NavMenu = () => {
         } transition-all duration-300 fixed top-0 w-full`}
       >
         <div className="menu-logo">
-          <Link href="/">InnoWeb Solutions</Link>
+          <Link href="/">Zachary Distant</Link>
         </div>
         <div className="menu-open" onClick={toggleMenu}>
           <p>Menu</p>
@@ -75,7 +75,7 @@ const NavMenu = () => {
         <div className="menu-overlay-bar">
           <div className="menu-logo open">
             <Link href="/" onClick={toggleMenu}>
-              InnoWeb Solutions
+            Zachary Distant
             </Link>
           </div>
           <div className="menu-close" onClick={toggleMenu}>
@@ -96,7 +96,7 @@ const NavMenu = () => {
             ))}
           </div>
           <div className="menu-info flex-col">
-            <div className="menu-info-col mb-3">
+            <div className="menu-info-col mb-3 relative z-10">
               <SocialLinks />
             </div>
           </div>

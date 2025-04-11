@@ -21,7 +21,7 @@ const Page = () => {
           >
             <Image 
               alt="Profile"
-              src="/imagefour.jpg"
+              src="/memoji-computer.png"
               width={500} 
               height={500} 
               className="profile-pic relative md:absolute mix-blend-lighten rounded-bl-3xl md:object-[50%_25%] 

@@ -80,7 +80,7 @@ const Page = () => {
         </motion.h1>
 
         <div className="z-30 flex flex-wrap md:flex-nowrap mt-[3rem] md:mt-[5rem]">
-          <motion.div
+          {/* <motion.div
             className="w-3/4"
             initial={{ opacity: 0 }}
             animate={{
@@ -97,7 +97,7 @@ const Page = () => {
                 what we do
               </span>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
             initial={{ opacity: 0 }}

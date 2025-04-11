@@ -25,6 +25,11 @@
   -webkit-background-size: cover;
 }
 
+.project-page .project-data td h6,
+.project-content h6 {
+  color: #fff;
+}
+
 .heading .title,
 .heading .number {
   font-family: "Questrial", serif;
