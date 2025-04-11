@@ -79,7 +79,7 @@ const Page = () => {
           Websites
         </motion.h1>
 
-        <div className="z-30 flex flex-wrap md:flex-nowrap mt-[3rem] md:mt-[5rem]">
+        <div className="z-30 flex flex-wrap md:flex-nowrap mt-[3rem] md:mt-[5rem] md:justify-end">
           {/* <motion.div
             className="w-3/4"
             initial={{ opacity: 0 }}
