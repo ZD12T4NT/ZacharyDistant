@@ -4,8 +4,6 @@
 
 @import "tailwindcss/utilities";
 
-@import url("https://fonts.googleapis.com/css2?family=Questrial&family=Space+Grotesk:wght@300..700&display=swap");
-
 :root {
   --left-right-margin: 240px;
   --left-right-internal-margin: 24px;

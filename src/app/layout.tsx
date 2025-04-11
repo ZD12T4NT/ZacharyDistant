@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Head from "next/head"; // Import Head from next/head
 import "./globals.css";
 import NavMenu from "@/components/nav-bar/NavMenu";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -32,6 +33,14 @@ export default function RootLayout({
       dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
       suppressHydrationWarning
     >
+      <head>
+        {/* Add your font link here */}
+
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Questrial&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
+
+      </head>
       <body className="overflow-auto"> {/* Allows scrolling */}
         {!isMobile && <CustomCursor />} {/* Only show on non-mobile devices */}
         <ThemeProvider
