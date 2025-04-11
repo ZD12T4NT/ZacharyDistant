@@ -19,15 +19,14 @@ const Page = () => {
             className="profile-pic-wrapper relative md:pt-[177.77%] rounded-3xl md:rounded-tl-none md:rounded-br-none 
             md:rounded-tr-none md:rounded-bl-3xl overflow-y-hidden h-[30vh] sm:h-auto"
           >
-            <Image 
-              alt="Profile"
-              src="/memoji-computer.png"
-              width={500} 
-              height={500} 
-              className="profile-pic relative md:absolute mix-blend-lighten rounded-bl-3xl md:object-[50%_25%] 
-              object-cover h-full w-full inset-0"
-              priority
-            />
+         <img
+            src="/memoji-computer.png"
+            alt="Profile"
+            className="profile-pic relative md:absolute mix-blend-lighten rounded-bl-3xl md:object-[50%_25%] 
+            object-cover h-full w-full inset-0"
+          />
+
+
           </div>
         </div>
 
@@ -56,9 +55,10 @@ const Page = () => {
             className="presentation-text mt-[var(--top-internal-margin)] w-full md:w-3/4 opacity-full transform-none md:text-[1.5rem] font-normal"
             variants={textRevealMotion(0.3)}
           >
-            Hi, my name is Zac, a front-end web developer with a strong background in UX/UI design.
-            I’m passionate about creating engaging digital experiences and always exploring new technologies. 
-            Outside of coding, I love to hit the gym, spend quality time with family and make the most of my opportunities.
+            Hi, I'm Zac — a Front-end Web Developer.
+            I'm passionate about building engaging, responsive, and visually-driven digital experiences. I specialize in HTML, CSS, JavaScript, React, and TailwindCSS, and I love bringing interfaces to life with clean animations and thoughtful interactions.
+
+            I'm constantly exploring new technologies and best practices to push my skills forward and create smooth, user-focused designs. Outside of coding, you'll find me at the gym, spending time with my family, or making the most of every opportunity that comes my way.
             <br />
             <br />
             <span className='md:text-[1.2rem]'> CV Available on Request</span>
