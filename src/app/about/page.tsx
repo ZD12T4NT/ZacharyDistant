@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from "next/image"
 import { motion } from "framer-motion";
 import { easings, textRevealMotion, textRevealMotionFade } from "@/components/utils/animations";
 
@@ -18,7 +19,7 @@ const Page = () => {
             className="profile-pic-wrapper relative md:pt-[177.77%] rounded-3xl md:rounded-tl-none md:rounded-br-none 
             md:rounded-tr-none md:rounded-bl-3xl overflow-y-hidden h-[30vh] sm:h-auto"
           >
-         <img
+         <Image
             src="/zacsnowdon.jpg"
             alt="Profile"
             loading="lazy"
