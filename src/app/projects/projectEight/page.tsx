@@ -85,7 +85,7 @@ export default function Page() {  // Make sure this is exported correctly!
                                           </tbody>
                                           </table>
                                           </div>
-          <div className="project-description w-full md:w-1/2 " ><p>Coltech is a leading technology consultancy specializing in scaling technology teams across Data & AI, Cloud, and Software Engineering sectors. Their website serves as a comprehensive platform to connect exceptional talent with companies across Europe and the US, focusing on delivering user-centric transformation and digital projects that enable the transition to new technologies. By offering services such as Tech Virtual Bench, Project Teams, and Project Delivery, Coltech ensures innovative, scalable results and unparalleled support for businesses of all sizes.</p>
+          <div className="project-description w-full md:w-1/2 " ><p>Coltech is a leading technology consultancy specializing in scaling technology teams across Data & AI&#44; Cloud&#44; and Software Engineering sectors. Their website serves as a comprehensive platform to connect exceptional talent with companies across Europe and the US&#44; focusing on delivering user-centric transformation and digital projects that enable the transition to new technologies. By offering services such as Tech Virtual Bench&#44; Project Teams&#44; and Project Delivery&#44; Coltech ensures innovative&#44; scalable results and unparalleled support for businesses of all sizes.</p>
           </div>
           </div>
 

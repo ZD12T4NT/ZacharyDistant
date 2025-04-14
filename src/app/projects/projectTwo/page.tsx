@@ -86,7 +86,7 @@ export default function Page() {  // Make sure this is exported correctly!
                                           </tbody>
                                           </table>
                                           </div>
-          <div className="project-description w-full md:w-1/2 " ><p>Spectrum IT Recruitment is a leading UK-based agency specializing in software and technology recruitment. Their website serves as a comprehensive platform connecting exceptional talent with leading organizations across various sectors. With a user-friendly interface and intuitive navigation, it provides a seamless experience for job seekers and employers alike. The platform highlights Spectrum IT&apos;s expertise, values, and meticulous approach to recruitment, reinforcing their reputation as industry leaders. </p>
+          <div className="project-description w-full md:w-1/2 " ><p>Spectrum IT Recruitment is a leading UK-based agency specializing in software and technology recruitment. Their website serves as a comprehensive platform connecting exceptional talent with leading organizations across various sectors. With a user-friendly interface and intuitive navigation, it provides a seamless experience for job seekers and employers alike. The platform highlights Spectrum IT&apos;s expertise&#44; values&#44; and meticulous approach to recruitment&#44; reinforcing their reputation as industry leaders. </p>
           </div>
           </div>
 
