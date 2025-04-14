@@ -19,14 +19,13 @@ const Page = () => {
             className="profile-pic-wrapper relative md:pt-[177.77%] rounded-3xl md:rounded-tl-none md:rounded-br-none 
             md:rounded-tr-none md:rounded-bl-3xl overflow-y-hidden h-[30vh] sm:h-auto"
           >
-         <Image
-            src="/zacsnowdon.jpg"
-            alt="Profile"
-            loading="lazy"
-            className="profile-pic relative md:absolute mix-blend-lighten rounded-bl-3xl md:object-[50%_25%] 
-            object-cover h-full w-full inset-0"
-          />
-
+       <Image
+          src="/zacsnowdon.jpg"
+          alt="Profile"
+          loading="lazy"
+          unoptimized
+          className="profile-pic relative md:absolute mix-blend-lighten rounded-bl-3xl md:object-[50%_25%] object-cover h-full w-full inset-0"
+        />
 
           </div>
         </div>
