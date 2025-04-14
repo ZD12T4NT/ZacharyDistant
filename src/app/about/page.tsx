@@ -61,7 +61,7 @@ const Page = () => {
             <br>
             </br>
             <br />
-            I&apos;m constantly exploring new technologies and best practices to push my skills forward and create smooth&#44; user-focused designs. Outside of coding&#44; you'll find me at the gym&#44; spending time with my family&#44; or making the most of every opportunity that comes my way.
+            I&apos;m constantly exploring new technologies and best practices to push my skills forward and create smooth&#44; user-focused designs. Outside of coding&#44; you&apos;ll find me at the gym&#44; spending time with my family&#44; or making the most of every opportunity that comes my way.
             <br />
             <br />
             <span className='md:text-[1.2rem]'> CV Available on Request</span>
