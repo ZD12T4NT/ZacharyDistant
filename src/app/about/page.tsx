@@ -23,6 +23,8 @@ const Page = () => {
           src="/zacsnowdon.jpg"
           alt="Profile"
           loading="lazy"
+          width={100}
+          height={100}
           unoptimized
           className="profile-pic relative md:absolute mix-blend-lighten rounded-bl-3xl md:object-[50%_25%] object-cover h-full w-full inset-0"
         />
