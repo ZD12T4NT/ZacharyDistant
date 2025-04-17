@@ -24,15 +24,12 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html
-      lang="en"
-      className="bg-[#131313] [&::-webkit-scrollbar]:w-1
-      [&::-webkit-scrollbar-track]:bg-gray-100
-      [&::-webkit-scrollbar-thumb]:bg-red-500
-      dark:[&::-webkit-scrollbar-track]:bg-neutral-700
-      dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
-      suppressHydrationWarning
-    >
+      <html
+        lang="en"
+        className="bg-[#131313]"
+        suppressHydrationWarning
+      >
+
       <head>
         {/* Add your font link here */}
 

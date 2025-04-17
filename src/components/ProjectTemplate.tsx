@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { easings, textRevealMotionFade } from "./utils/animations";
-import { Project } from '@/Types/project'; // Correct import of Project type
-import '../app/projects/projectStyles.css'
-
+import { Project } from "@/Types/project";
+import "../app/projects/projectStyles.css";
 
 type Props = {
   project: Project;
@@ -12,6 +12,17 @@ type Props = {
 };
 
 export default function ProjectTemplate({ project, nextProject }: Props) {
+  // 🌈 Dynamically update the scrollbar color based on project
+  useEffect(() => {
+    if (project?.titleColor) {
+      document.body.style.setProperty("--scroll-thumb", project.titleColor);
+    }
+    return () => {
+      // optional: reset scroll color on unmount
+      document.body.style.removeProperty("--scroll-thumb");
+    };
+  }, [project]);
+
   return (
     <motion.div
       className="project-page h-full w-full pointer-events-auto"
@@ -22,43 +33,75 @@ export default function ProjectTemplate({ project, nextProject }: Props) {
       <div className="project relative h-auto overflow-y-hidden">
         <div className="header-project flex flex-col relative h-full">
           <div className="image-wrapper w-full relative">
-            <motion.img
-              src={project.src}
-              initial={{ y: 30 }}
-              animate={{
-                y: [0, -10, 10, 0],
-                transition: {
-                  duration: 5,
-                  ease: "linear",
-                  repeat: Infinity,
-                },
-              }}
-              className="hero-image object-contain h-full w-full inset-0"
-              alt={`${project.name} Hero`}
-            />
+            {project.url ? (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group block w-full h-full"
+              >
+                <motion.div
+                  initial={false}
+                  className="absolute top-1/2 left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-x-1/2 -translate-y-1/2 z-10 px-4 py-2 text-sm rounded-lg pointer-events-none text-white shadow-lg"
+                  style={{ background: project.titleColor || "rgba(0,0,0,0.8)" }}
+                >
+                  View Live Site ↗
+                </motion.div>
+
+                <motion.img
+                  src={project.src}
+                  initial={{ y: 30 }}
+                  animate={{
+                    y: [0, -10, 10, 0],
+                    transition: {
+                      duration: 5,
+                      ease: "linear",
+                      repeat: Infinity,
+                    },
+                  }}
+                  className="hero-image object-contain h-full w-full inset-0"
+                  alt={`${project.name} Hero`}
+                />
+              </a>
+            ) : (
+              <motion.img
+                src={project.src}
+                initial={{ y: 30 }}
+                animate={{
+                  y: [0, -10, 10, 0],
+                  transition: {
+                    duration: 5,
+                    ease: "linear",
+                    repeat: Infinity,
+                  },
+                }}
+                className="hero-image object-contain h-full w-full inset-0"
+                alt={`${project.name} Hero`}
+              />
+            )}
           </div>
         </div>
 
         <div className="project-title p-[2em] lg:p-0">
           <div className="page-head flex align-baseline">
             <div className="page-title w-full m-0 text-left md:text-center">
-            <h1
+              <h1
                 className="text-[2rem] sm:text-[3.24rem] md:text-[5rem] font-[var(--main)]"
-                style={{ color: project.titleColor || '#54c8e8' }} // fallback if color is missing
+                style={{ color: project.titleColor || "#54c8e8" }}
               >
                 {project.name}
               </h1>
             </div>
           </div>
           <div className="next-project p-[2em] lg:p-0 w-full">
-          <motion.hr
-            className="head-separator bg-white h-[2px] w-full"
-            initial={{ scaleX: 0, originX: 0 }}
-            animate={{
-              scaleX: 1,
-              transition: { duration: 0.8, ease: easings.easeInOutQuint },
-            }}
-          />
+            <motion.hr
+              className="head-separator bg-white h-[2px] w-full"
+              initial={{ scaleX: 0, originX: 0 }}
+              animate={{
+                scaleX: 1,
+                transition: { duration: 0.8, ease: easings.easeInOutQuint },
+              }}
+            />
           </div>
         </div>
 
@@ -88,17 +131,41 @@ export default function ProjectTemplate({ project, nextProject }: Props) {
             </table>
           </div>
           <div className="project-description w-full md:w-3/4">
-            <p className="presentation-text  w-full opacity-full transform-none md:text-[1.5rem] font-normal">{project.description}</p>
+            <p className="presentation-text w-full opacity-full transform-none md:text-[1.5rem] font-normal">
+              {project.description}
+            </p>
           </div>
         </div>
 
-        <div className="project-content p-[2em] lg:p-0 text-[1.2rem]">
-          <h6>Showcase</h6>
-          {project.images.map((img: string, i: number) => (
-            <div className="mb-[3rem]" key={i}>
-                <img src={img} alt={`Image ${i + 1}`} />
-            </div>
-            ))}
+        <div className="project-content pt-[2rem] lg:p-0">
+          {project.images.map((img: string, i: number) => {
+            const ref = useRef(null);
+            const isInView = useInView(ref, {
+              margin: "0px 0px -40% 0px",
+            });
+
+            return (
+              <motion.div
+                key={i}
+                ref={ref}
+                animate={{
+                  scale: isInView ? 1.03 : 1,
+                  filter: isInView ? "brightness(110%)" : "brightness(90%)",
+                  boxShadow: isInView
+                    ? `0 0 40px ${project.titleColor || "rgba(84,200,232,0.5)"}`
+                    : "0 0 0 rgba(0,0,0,0)",
+                }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="my-[4rem] w-full"
+              >
+                <img
+                  src={img}
+                  alt={`Image ${i + 1}`}
+                  className="w-full h-auto object-contain"
+                />
+              </motion.div>
+            );
+          })}
         </div>
 
         <div className="next-project p-[2em] lg:p-0 w-full">

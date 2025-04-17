@@ -8,13 +8,14 @@ import ContactButton from "@/components/ui/ContactButton";
 
 const Page = () => {
   const images = [
+    "/firstpointgrouphome.png",
+    "/fruitiongrouphome.png",
     "/mcs.png",
     "/barringtonjames.png",
     "/spectrum.png",
     "/kintec.png",
     "/sigmar.png",
     "/integro.png",
-    "/roc.png",
   ];
 
   const [currentImage, setCurrentImage] = useState(0);

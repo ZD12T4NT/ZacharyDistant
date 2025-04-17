@@ -7,7 +7,8 @@ export type Project = {
   category: string;
   description: string;
   images: string[];
-  titleColor?: string; // <-- optional color for title
+  titleColor?: string;
+  url?: string; // <-- Add this
 };
 
 
@@ -29,10 +30,11 @@ export const projects: Project[] = [
     slug: 'firstpointgroup',
     src: '/firstpointbuild.png', // for project page
     hoverImage: '/firstpointgroupv2.png', // NEW - for hover preview
+    url: 'https://www.firstpointgroup.com', // <-- Add this
   },
   {
     name: 'Fruition Group',
-    titleColor: '#f27596',
+    titleColor: '#EE2C61',
     description: '​First Point Group is a global recruitment agency that specialises in telecommunications, technology, data centres, and energy & renewables. Founded in 2004 by Alistair Rynish and David Taylor, the company has expanded to operate 11 offices worldwide, including locations in London, Berlin, Paris, Toronto, Dallas, Hong Kong, Shenzhen, Mexico City, Dubai, Johannesburg, and Madrid.',
     year: 2025,
     category: 'Web Development',
@@ -46,7 +48,9 @@ export const projects: Project[] = [
    
   src: '/fruitiongroupbuild.png', // ✅ Add this!
   slug: 'fruitiongroup',
-  hoverImage:'/fruitiongroupv2.png'
+  hoverImage:'/fruitiongroupv2.png',
+  url: 'https://www.fruitiongroup.com', // <-- Add this
+
   },
   {
     name: 'MCS',
@@ -59,13 +63,13 @@ export const projects: Project[] = [
       '/mcsimagetwo.png',
       '/mcsimagethree.png',
       '/mcsimagefour.png',
-      '/mcsimagefive.png',
-
     ],
    
   src: '/mcsbuild.png', // ✅ Add this!
   slug: 'mcs-group',
-  hoverImage: '/mcshome.png'
+  hoverImage: '/mcshome.png',
+  url: 'https://www.mcsgroup.jobs', // <-- Add this
+
   },
   {
     name: 'Barrington James',
@@ -74,17 +78,17 @@ export const projects: Project[] = [
     year: 2024,
     category: 'Web Development',
     images: [
-      '/barringtonimageone.png',
-      '/barringtonimagetwo.png',
-      '/barringtonimagethree.png',
-      '/barringtonimagefour.png',
-      '/barringtonimagefive.png',
-
+      '/jamesimageone.png',
+      '/jamesimagetwo.png',
+      '/jamesimagethree.png',
+      '/jamesimagefour.png',
     ],
    
   src: '/BarringtonJamesBuild.png', // ✅ Add this!
   slug: 'barrington-james',
-  hoverImage: '/barringtonhome.png'
+  hoverImage: '/barringtonhome.png',
+  url: 'https://www.barringtonjames.com', // <-- Add this
+
   },
   {
     name: 'Kintec Global',
@@ -102,12 +106,13 @@ export const projects: Project[] = [
     
     src: '/KintecGlobalBuild.png', // ✅ Add this!
     slug: 'kintec-global',
-    hoverImage:'/kintechome.png'
+    hoverImage:'/kintechome.png',
+    url: 'https://www.kintecglobal.com', // <-- Add this
     
   },
   {
     name: 'Spectrum IT',
-    titleColor: '',
+    titleColor: '#ED1C24',
     description: 'Spectrum IT Recruitment is a leading UK-based agency specializing in software and technology recruitment. Their website serves as a comprehensive platform connecting exceptional talent with leading organizations across various sectors. With a user-friendly interface and intuitive navigation, it provides a seamless experience for job seekers and employers alike. The platform highlights Spectrum IT&apos;s expertise&#44; values&#44; and meticulous approach to recruitment&#44; reinforcing their reputation as industry leaders. ',
     year: 2024,
     category: 'Web Development',
@@ -116,13 +121,13 @@ export const projects: Project[] = [
       '/spectrumimagetwo.png',
       '/spectrumimagethree.png',
       '/spectrumimagefour.png',
-      '/spectrumimagefive.png',
-
     ],
   
     src: '/SpectrumITBuild.png', // ✅ Add this!
     slug: 'spectrum-it',
-    hoverImage: '/spectrumhome.png'
+    hoverImage: '/spectrumhome.png',
+    url: 'https://www.spectrumit.co.uk/', // <-- Add this
+
   },
   {
     name: 'Sigmar Recruitment',
@@ -133,50 +138,53 @@ export const projects: Project[] = [
     images: [
       '/sigmarimageone.png',
       '/sigmarimagetwo.png',
-      // ...
+      '/sigmarimagethree.png',
+      '/sigmarimagefour.png',
+
     ],
    
     src: '/SigmarRecruitmentBuild.png', // ✅ Add this!
     slug: 'sigmar-recruitment',
-    hoverImage: '/sigmarhome.png'
-  },
-  {
-      name: 'Coltec',
-      titleColor: '#008ecc',
-      description: 'Coltech is a leading technology consultancy specializing in scaling technology teams across Data & AI&#44; Cloud&#44; and Software Engineering sectors. Their website serves as a comprehensive platform to connect exceptional talent with companies across Europe and the US&#44; focusing on delivering user-centric transformation and digital projects that enable the transition to new technologies. By offering services such as Tech Virtual Bench&#44; Project Teams&#44; and Project Delivery&#44; Coltech ensures innovative&#44; scalable results and unparalleled support for businesses of all sizes.',
-      year: 2024,
-      category: 'Web Development',
-      images: [
-        '/coltecimageone.png',
-        '/coltecimagetwo.png',
-        '/coltecimagethree.png',
-        '/coltecimagefour.png',
-        '/coltecimagefive.png',
+    hoverImage: '/sigmarhome.png',
+    url: 'https://www.sigmarrecruitment.com/', // <-- Add this
 
-      ],
+  },
+  // {
+  //     name: 'Coltec',
+  //     titleColor: '#008ecc',
+  //     description: 'Coltech is a leading technology consultancy specializing in scaling technology teams across Data & AI&#44; Cloud&#44; and Software Engineering sectors. Their website serves as a comprehensive platform to connect exceptional talent with companies across Europe and the US&#44; focusing on delivering user-centric transformation and digital projects that enable the transition to new technologies. By offering services such as Tech Virtual Bench&#44; Project Teams&#44; and Project Delivery&#44; Coltech ensures innovative&#44; scalable results and unparalleled support for businesses of all sizes.',
+  //     year: 2024,
+  //     category: 'Web Development',
+  //     images: [
+  //       '/coltecimageone.png',
+  //       '/coltecimagetwo.png',
+  //       '/coltecimagethree.png',
+  //       '/coltecimagefour.png',
+  //     ],
     
-    src: '/coltechome.png', // ✅ Add this!
-    slug: 'coltec',
-    hoverImage: '/coltecbuild.png'
-  },
-  {
-    name: 'Integro Partners',
-    titleColor: '#fc7753',
-    description: 'Integro Partners is a recruitment consultancy specializing in connecting exceptional talent with leading organizations across various sectors. Their website serves as a comprehensive platform for job seekers and employers, offering a user-friendly interface to facilitate seamless recruitment processes.',
-    year: 2023,
-    category: 'Web Development',
-    images: [
-      '/integroimageone.png',
-      '/integroimagetwo.png',
-      '/integroimagethree.png',
-      '/integroimagefour.png',
-      '/integroimagefive.png',
+  //   src: '/coltechome.png', // ✅ Add this!
+  //   slug: 'coltec',
+  //   hoverImage: '/coltecbuild.png',
+  //   url: 'https://www.coltech.io/', // <-- Add this
 
-    ],
+  // },
+  // {
+  //   name: 'Integro Partners',
+  //   titleColor: '#fc7753',
+  //   description: 'Integro Partners is a recruitment consultancy specializing in connecting exceptional talent with leading organizations across various sectors. Their website serves as a comprehensive platform for job seekers and employers, offering a user-friendly interface to facilitate seamless recruitment processes.',
+  //   year: 2023,
+  //   category: 'Web Development',
+  //   images: [
+  //     '/integroimageone.png',
+  //     '/integroimagetwo.png',
+  //     '/integroimagethree.png',
+  //     '/integroimagefour.png',
+  //   ],
    
-  src: '/integrobuild.png', // ✅ Add this!
-  slug: 'integro-partners',
-  hoverImage: '/integrohome.png'
-  },
+  // src: '/integrobuild.png', // ✅ Add this!
+  // slug: 'integro-partners',
+  // hoverImage: '/integrohome.png',
+  // url: 'https://www.integro.partners/', // <-- Add this
+  // },
 
 ];

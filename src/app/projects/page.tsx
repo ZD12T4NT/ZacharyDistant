@@ -12,7 +12,7 @@ export default function ImageHoverComponent() {
   const [windowWidth, setWindowWidth] = useState<number | undefined>(undefined);  // Use undefined as initial state
   const tl = useRef<gsap.core.Timeline | null>(null);
 
-  const visibleProjects: Project[] = windowWidth && windowWidth < 1024
+  const visibleProjects: Project[] = windowWidth && windowWidth < 1200
     ? projects.slice(0, 3)
     : projects;
 

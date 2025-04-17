@@ -25,6 +25,29 @@
   -webkit-font-smoothing: anitialised;
 }
 
+body {
+  --scroll-thumb: #a7ec51; /* fallback red or whatever you want */
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(--scroll-thumb);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb);
+}
+
+/* Firefox support */
+
+body {
+  scrollbar-color: var(--scroll-thumb) #1a1a1a;
+  scrollbar-width: thin;
+}
+
 a,
 p,
 ul li {
