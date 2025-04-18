@@ -11,14 +11,47 @@ type Props = {
   nextProject: Project;
 };
 
+function AnimatedImage({
+  src,
+  alt,
+  color,
+}: {
+  src: string;
+  alt: string;
+  color?: string;
+}) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "0px 0px -40% 0px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      animate={{
+        scale: isInView ? 1.03 : 1,
+        filter: isInView ? "brightness(110%)" : "brightness(90%)",
+        boxShadow: isInView
+          ? `0 0 40px ${color || "rgba(84,200,232,0.5)"}`
+          : "0 0 0 rgba(0,0,0,0)",
+      }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="my-[4rem] w-full"
+    >
+      <img
+        src={src}
+        alt={alt}
+        className="w-full h-auto object-contain"
+      />
+    </motion.div>
+  );
+}
+
 export default function ProjectTemplate({ project, nextProject }: Props) {
-  // 🌈 Dynamically update the scrollbar color based on project
+  // 🌈 Update scrollbar color based on project
   useEffect(() => {
     if (project?.titleColor) {
       document.body.style.setProperty("--scroll-thumb", project.titleColor);
     }
     return () => {
-      // optional: reset scroll color on unmount
       document.body.style.removeProperty("--scroll-thumb");
     };
   }, [project]);
@@ -138,34 +171,14 @@ export default function ProjectTemplate({ project, nextProject }: Props) {
         </div>
 
         <div className="project-content pt-[2rem] lg:p-0">
-          {project.images.map((img: string, i: number) => {
-            const ref = useRef(null);
-            const isInView = useInView(ref, {
-              margin: "0px 0px -40% 0px",
-            });
-
-            return (
-              <motion.div
-                key={i}
-                ref={ref}
-                animate={{
-                  scale: isInView ? 1.03 : 1,
-                  filter: isInView ? "brightness(110%)" : "brightness(90%)",
-                  boxShadow: isInView
-                    ? `0 0 40px ${project.titleColor || "rgba(84,200,232,0.5)"}`
-                    : "0 0 0 rgba(0,0,0,0)",
-                }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                className="my-[4rem] w-full"
-              >
-                <img
-                  src={img}
-                  alt={`Image ${i + 1}`}
-                  className="w-full h-auto object-contain"
-                />
-              </motion.div>
-            );
-          })}
+          {project.images.map((img: string, i: number) => (
+            <AnimatedImage
+              key={i}
+              src={img}
+              alt={`Image ${i + 1}`}
+              color={project.titleColor}
+            />
+          ))}
         </div>
 
         <div className="next-project p-[2em] lg:p-0 w-full">
