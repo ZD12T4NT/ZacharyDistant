@@ -10,7 +10,10 @@ const menuLinks = [
   { path: "/about", label: "About" },
   { path: "/projects", label: "Projects" },
   { path: "/contact", label: "Contact" },
+  { path: "/offers", label: "What we offer" }, // ✅ New Link
+
 ];
+
 
 const NavMenu = () => {
   const container = useRef(null);
