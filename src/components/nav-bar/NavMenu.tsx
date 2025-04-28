@@ -10,7 +10,7 @@ const menuLinks = [
   { path: "/about", label: "About" },
   { path: "/projects", label: "Projects" },
   { path: "/contact", label: "Contact" },
-  { path: "/offers", label: "What we offer" }, // ✅ New Link
+  { path: "/offers", label: "Services" }, // ✅ New Link
 
 ];
 
