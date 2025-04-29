@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { Code, LayoutTemplate, MonitorSmartphone, Paintbrush } from "lucide-react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import TemplatesShowcase from "@/components/TemplatesShowcase";
 
 type Offer = {
   title: string;
@@ -97,7 +97,8 @@ const OffersPage = () => {
             </AnimatePresence>
           </div>
         </div>
-      </div>
+              <TemplatesShowcase />
+        </div>
     </div>
   );
 };
