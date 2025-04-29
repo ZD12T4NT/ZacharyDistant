@@ -56,7 +56,7 @@ const OffersPage = () => {
               <h2 className="text-sm font-semibold tracking-wide uppercase text-white/70">My Services</h2>
               <p className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">What I Offer</p>
               <p className="mt-4 text-lg text-zinc-300">
-                Whether you're starting from scratch or need a custom feature built into your app, I help you ship fast
+                Whether you&apos;re starting from scratch or need a custom feature built into your app&#806; I help you ship fast
                 without compromise.
               </p>
             </motion.div>

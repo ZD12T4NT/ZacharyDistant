@@ -5,7 +5,7 @@ interface ExploreButtonProps {
 }
 
 export const ExploreButton: React.FC<ExploreButtonProps> = ({ className }) => {
-  const buttonLinks = [{ path: "/projects", label: "Projects" }];
+  const buttonLinks = [{ path: "/offers", label: "Services" }];
 
   return (
     <div className={`w-full md:w-auto md:flex mt-5 md:align-middle link-holder ${className}`}>

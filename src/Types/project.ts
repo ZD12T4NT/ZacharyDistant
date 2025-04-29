@@ -149,42 +149,5 @@ export const projects: Project[] = [
     url: 'https://www.sigmarrecruitment.com/', // <-- Add this
 
   },
-  // {
-  //     name: 'Coltec',
-  //     titleColor: '#008ecc',
-  //     description: 'Coltech is a leading technology consultancy specializing in scaling technology teams across Data & AI&#44; Cloud&#44; and Software Engineering sectors. Their website serves as a comprehensive platform to connect exceptional talent with companies across Europe and the US&#44; focusing on delivering user-centric transformation and digital projects that enable the transition to new technologies. By offering services such as Tech Virtual Bench&#44; Project Teams&#44; and Project Delivery&#44; Coltech ensures innovative&#44; scalable results and unparalleled support for businesses of all sizes.',
-  //     year: 2024,
-  //     category: 'Web Development',
-  //     images: [
-  //       '/coltecimageone.png',
-  //       '/coltecimagetwo.png',
-  //       '/coltecimagethree.png',
-  //       '/coltecimagefour.png',
-  //     ],
-    
-  //   src: '/coltechome.png', // ✅ Add this!
-  //   slug: 'coltec',
-  //   hoverImage: '/coltecbuild.png',
-  //   url: 'https://www.coltech.io/', // <-- Add this
-
-  // },
-  // {
-  //   name: 'Integro Partners',
-  //   titleColor: '#fc7753',
-  //   description: 'Integro Partners is a recruitment consultancy specializing in connecting exceptional talent with leading organizations across various sectors. Their website serves as a comprehensive platform for job seekers and employers, offering a user-friendly interface to facilitate seamless recruitment processes.',
-  //   year: 2023,
-  //   category: 'Web Development',
-  //   images: [
-  //     '/integroimageone.png',
-  //     '/integroimagetwo.png',
-  //     '/integroimagethree.png',
-  //     '/integroimagefour.png',
-  //   ],
-   
-  // src: '/integrobuild.png', // ✅ Add this!
-  // slug: 'integro-partners',
-  // hoverImage: '/integrohome.png',
-  // url: 'https://www.integro.partners/', // <-- Add this
-  // },
-
+ 
 ];

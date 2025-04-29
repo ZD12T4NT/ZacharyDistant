@@ -1,5 +1,5 @@
 import ProjectTemplate from "../../../components/ProjectTemplate";
-import { projects, Project } from '@/Types/project'; // Correct import of Project type
+import { projects } from '@/Types/project'; // Correct import of Project type
 
 export default function KintecGlobalPage() {
   const project = projects.find((p) => p.slug === "kintec-global");

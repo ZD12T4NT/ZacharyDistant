@@ -1,8 +1,8 @@
 import ProjectTemplate from "../../../components/ProjectTemplate";
-import { projects, Project } from '@/Types/project'; // Correct import of Project type
+import { projects } from '@/Types/project'; // Correct import of Project type
 
 
-export default function KintecGlobalPage() {
+export default function FruitionGroupPage() {
   const project = projects.find((p) => p.slug === "fruitiongroup");
   if (!project) throw new Error("Project not found");
 

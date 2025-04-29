@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const containerVariants = {
     hidden: {},
@@ -121,14 +122,16 @@ export default function MoreProjectsPage() {
                 rel="noopener noreferrer"
                 className="block group md:h-[90vh]"
                 >
-                <div className="relative overflow-hidden rounded-2xl">
-                    <img
-                    src={project.img}
-                    alt={project.name}
-                    className="w-full md:h-[80vh] object-cover rounded-2xl"
-                    tabIndex={0}
-                    />
-                </div>
+              <div className="relative overflow-hidden rounded-2xl w-full md:h-[80vh]">
+                <Image
+                  src={project.img}
+                  alt={project.name}
+                  fill
+                  className="object-cover rounded-2xl"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+
                 <p className="mt-2 text-lg font-semibold opacity-100 md:opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {project.name} →
                 </p>

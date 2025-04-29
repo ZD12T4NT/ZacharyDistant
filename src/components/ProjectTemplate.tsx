@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { easings, textRevealMotionFade } from "./utils/animations";
+import Image from 'next/image'
 import { Project } from "@/Types/project";
 import "../app/projects/projectStyles.css";
 
@@ -36,17 +37,20 @@ function AnimatedImage({
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="my-[4rem] w-full"
     >
-      <img
+      <Image
         src={src}
         alt={alt}
+        layout="intrinsic" // Automatically adjust based on image size
+        width={1200} // Example width, adjust as necessary
+        height={800} // Example height, adjust as necessary
         className="w-full h-auto object-contain"
       />
     </motion.div>
   );
 }
 
+
 export default function ProjectTemplate({ project, nextProject }: Props) {
-  // 🌈 Update scrollbar color based on project
   useEffect(() => {
     if (project?.titleColor) {
       document.body.style.setProperty("--scroll-thumb", project.titleColor);
@@ -66,52 +70,41 @@ export default function ProjectTemplate({ project, nextProject }: Props) {
       <div className="project relative h-auto overflow-y-hidden">
         <div className="header-project flex flex-col relative h-full">
           <div className="image-wrapper w-full relative">
-            {project.url ? (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative group block w-full h-full"
-              >
-                <motion.div
-                  initial={false}
-                  className="absolute top-1/2 left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-x-1/2 -translate-y-1/2 z-10 px-4 py-2 text-sm rounded-lg pointer-events-none text-white shadow-lg"
-                  style={{ background: project.titleColor || "rgba(0,0,0,0.8)" }}
+              {project.url ? (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative group block w-full h-full"
                 >
-                  View Live Site ↗
-                </motion.div>
+                  <motion.div
+                    initial={false}
+                    className="absolute top-1/2 left-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform -translate-x-1/2 -translate-y-1/2 z-10 px-4 py-2 text-sm rounded-lg pointer-events-none text-white shadow-lg"
+                    style={{ background: project.titleColor || "rgba(0,0,0,0.8)" }}
+                  >
+                    View Live Site ↗
+                  </motion.div>
 
-                <motion.img
+                  <Image
+                    src={project.src}
+                    alt={`${project.name} Hero`}
+                    layout="responsive" // Make the image responsive
+                    width={1200}  // Set a width (adjust as needed)
+                    height={800}  // Set a height (adjust as needed)
+                    className="hero-image object-contain h-full w-full inset-0"
+                  />
+                </a>
+              ) : (
+                <Image
                   src={project.src}
-                  initial={{ y: 30 }}
-                  animate={{
-                    y: [0, -10, 10, 0],
-                    transition: {
-                      duration: 5,
-                      ease: "linear",
-                      repeat: Infinity,
-                    },
-                  }}
-                  className="hero-image object-contain h-full w-full inset-0"
                   alt={`${project.name} Hero`}
+                  layout="responsive" // Make the image responsive
+                  width={1200}  // Set a width (adjust as needed)
+                  height={800}  // Set a height (adjust as needed)
+                  className="hero-image object-contain h-full w-full inset-0"
                 />
-              </a>
-            ) : (
-              <motion.img
-                src={project.src}
-                initial={{ y: 30 }}
-                animate={{
-                  y: [0, -10, 10, 0],
-                  transition: {
-                    duration: 5,
-                    ease: "linear",
-                    repeat: Infinity,
-                  },
-                }}
-                className="hero-image object-contain h-full w-full inset-0"
-                alt={`${project.name} Hero`}
-              />
-            )}
+              )}
+
           </div>
         </div>
 
@@ -180,6 +173,7 @@ export default function ProjectTemplate({ project, nextProject }: Props) {
             />
           ))}
         </div>
+
 
         <div className="next-project p-[2em] lg:p-0 w-full">
           <motion.hr

@@ -6,6 +6,11 @@ import Link from 'next/link';
 import { motion } from "framer-motion";
 import { textRevealMotionFade } from "@/components/utils/animations";
 import { projects, Project } from '@/Types/project'; // Correct import of Project type
+import NextImage from 'next/image';
+import Image from 'next/image'
+
+const MotionImage = motion(NextImage);
+
 
 export default function ImageHoverComponent() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -41,33 +46,30 @@ export default function ImageHoverComponent() {
     <motion.div className="overflow-hidden flex flex-col lg:flex-row h-screen w-full" initial="initial" animate="animate" variants={textRevealMotionFade(1)}>
       <div className="block w-full lg:w-[55%] h-1/2 lg:h-3/4 relative lg:flex align-middle m-auto lg:ml-0 lg:mb-0">
         <div className="floating-image">
-          <motion.img
-            initial={{ y: 30 }}
-            animate={{
-              y: [0, -10, 10, 0],
-              transition: {
-                delay: 0,
-                duration: 5,
-                ease: "linear",
-                repeat: Infinity,
-              }
-            }}
+        <MotionImage
             src="/liquid-cube.png"
-            className='absolute top-[14rem] lg:top-0 left-0 object-contain bottom-0 right-0 flex m-auto justify-center align-center w-[20rem] h-full'
-            loading="lazy"
+            alt="Liquid Cube"
+            width={320}
+            height={320}
+            className="absolute top-[14rem] lg:top-0 left-0 object-contain bottom-0 right-0 flex m-auto justify-center align-center w-[20rem] h-full"
+            style={{ objectFit: 'contain' }}
           />
+
         </div>
         {visibleProjects.map((project, index) => (
-          <img
-            key={index}
-            src={project.hoverImage} // ✅ use hover image instead
-          // Ensure the `src` is part of the project data
-            alt={project.name}
-            className={`m-auto top-[14rem] lg:top-0 absolute inset-0 w-auto lg:w-full md:h-[27rem] lg:h-full object-cover rounded-3xl lg:rounded-tl-none lg:rounded-br-none lg:rounded-tr-3xl image-${index}`}
-            style={{ opacity: 0 }}
-            loading="lazy"
-          />
+          <div key={index} className="relative w-full h-[27rem] lg:h-full">
+            <Image
+              src={project.hoverImage}
+              alt={project.name}
+              fill
+              className={`object-cover rounded-3xl lg:rounded-tl-none lg:rounded-br-none lg:rounded-tr-3xl image-${index}`}
+              style={{ opacity: 0 }}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
         ))}
+
       </div>
       <div className="w-full overflow-y-scroll overflow-x-hidden lg:w-[45%] h-full flex flex-col justify-end items-start p-10 relative">
         <div className="heading leading-3 md:leading-tight flex flex-wrap align-bottom justify-between w-full lg:w-3/4 font-bold mb-[2rem]">
@@ -92,7 +94,7 @@ export default function ImageHoverComponent() {
                   opacity: windowWidth && windowWidth < 1024 ? 1 : hoveredIndex === index ? 1 : 0,
                 }}
               >
-                →
+                → 
               </h4>
               <div>{project.name}</div>
             </motion.div>
