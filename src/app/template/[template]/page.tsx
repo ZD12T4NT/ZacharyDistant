@@ -18,7 +18,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function TemplatePage({ params }: { params: { template: string } }) {
+export default async function TemplatePage(props: { params: Promise<{ template: string }> }) {
+  const params = await props.params;
   const templateInfo = await getTemplateData(params.template);
   if (!templateInfo) notFound();
 
@@ -65,7 +66,8 @@ export default async function TemplatePage({ params }: { params: { template: str
 
 
 // Metadata
-export async function generateMetadata({ params }: { params: { template: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ template: string }> }): Promise<Metadata> {
+  const params = await props.params;
 
   const template = await getTemplateData(params.template);
   if (!template) return { title: "Template Not Found" };
