@@ -6,11 +6,7 @@ import path from "path";
 import Image from "next/image";
 
 // PageProps definition (dynamic routing)
-type PageProps = {
-  params: {
-    template: string;
-  };
-};
+
 
 // Tell Next.js which slugs to statically generate
 export async function generateStaticParams() {
@@ -22,7 +18,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function TemplatePage({ params }: PageProps) {
+export default async function TemplatePage({ params }: { params: { template: string } }) {
   const templateInfo = await getTemplateData(params.template);
   if (!templateInfo) notFound();
 
@@ -70,6 +66,7 @@ export default async function TemplatePage({ params }: PageProps) {
 
 // Metadata
 export async function generateMetadata({ params }: { params: { template: string } }): Promise<Metadata> {
+
   const template = await getTemplateData(params.template);
   if (!template) return { title: "Template Not Found" };
   return {
