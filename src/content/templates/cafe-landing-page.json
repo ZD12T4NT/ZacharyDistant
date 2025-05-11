@@ -1,7 +1,10 @@
 {
     "title": "Cafe Landing Page",
     "description": "A sleek and modern cafe landing page with cafe related content.",
-    "demoLink": "https://cafe-landing-demo.vercel.app",
-    "image": "/coffee.jpg"
+    "demoLink": "https://cafe-landing-page-lilac.vercel.app/",
+    "image": "/cafeLpImage.png",
+    "buttonColor": "#54372B",
+    "buttonTextColor": "#F7E1BC",
+    "backgroundColor": "#221518"
   }
   

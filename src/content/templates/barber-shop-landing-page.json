@@ -1,7 +1,10 @@
 {
     "title": "BarberShop Landing Page",
     "description": "A sleek and modern Barber landing page.",
-    "demoLink": "https://barbershop-landing-demo.vercel.app",
-    "image": "/barbers.jpg"
+    "demoLink": "https://barber-landing-page-pi.vercel.app/",
+    "image": "/barberLp.png",
+    "buttonColor": "#FCAA04",
+    "buttonTextColor": "#000",
+    "backgroundColor": "#FCAA04"
   }
   

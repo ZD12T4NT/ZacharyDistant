@@ -6,6 +6,9 @@ export type TemplateInfo = {
   description: string;
   demoLink: string;
   image: string;
+  backgroundColor?: string;
+  buttonColor?: string;
+  buttonTextColor?: string;
 };
 
 export async function getTemplateData(slug: string): Promise<TemplateInfo | null> {
