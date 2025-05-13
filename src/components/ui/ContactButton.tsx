@@ -5,7 +5,7 @@ interface ContactButtonProps {
 }
 
 export const ContactButton: React.FC<ContactButtonProps> = ({ className }) => {
-  const buttonLinks = [{ path: "/contact", label: "Contact" }];
+  const buttonLinks = [{ path: "/projects", label: "Latest" }];
 
   return (
     <div className={`w-full md:w-auto md:flex mt-5 md:align-middle link-holder ${className}`}>

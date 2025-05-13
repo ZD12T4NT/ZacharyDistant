@@ -56,19 +56,21 @@ export default function ImageHoverComponent() {
           />
 
         </div>
-        {visibleProjects.map((project, index) => (
-          <div key={index} className="relative w-full h-[27rem] lg:h-full">
+      <div className="absolute inset-0 w-full h-full">
+          {visibleProjects.map((project, index) => (
             <Image
+              key={index}
               src={project.hoverImage}
               alt={project.name}
               fill
-              className={`object-cover rounded-3xl lg:rounded-tl-none lg:rounded-br-none lg:rounded-tr-3xl image-${index}`}
+              className={`image-${index} absolute inset-0 object-cover w-full h-full transition-opacity duration-500 rounded-3xl lg:rounded-tl-none lg:rounded-br-none lg:rounded-tr-3xl`}
               style={{ opacity: 0 }}
               loading="lazy"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-          </div>
-        ))}
+          ))}
+        </div>
+
 
       </div>
       <div className="w-full overflow-y-scroll overflow-x-hidden lg:w-[45%] h-full flex flex-col justify-end items-start p-10 relative">

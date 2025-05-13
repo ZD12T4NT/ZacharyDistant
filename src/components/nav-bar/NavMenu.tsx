@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import "./NavMenu.css";
-import SocialLinks from "./SocialLinks";
+// import SocialLinks from "./SocialLinks";
 
 const menuLinks = [
   { path: "/about", label: "About" },
@@ -100,7 +100,7 @@ const NavMenu = () => {
           </div>
           <div className="menu-info flex-col">
             <div className="menu-info-col mb-3 relative z-10">
-              <SocialLinks />
+              {/* <SocialLinks /> */}
             </div>
           </div>
         </div>

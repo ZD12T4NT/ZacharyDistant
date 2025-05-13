@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { easings, textRevealMotionFade } from "@/components/utils/animations";
-import SocialLinks from "@/components/nav-bar/SocialLinks";
+// import SocialLinks from "@/components/nav-bar/SocialLinks";
 import "../projects/projectStyles.css";
 import ContactForm from "./contactForm";
 
@@ -41,11 +41,11 @@ const Page = () => {
               initial={{ scaleX: 0, originX: 0 }}
               animate={{ scaleX: 1, transition: { duration: 0.8, ease: easings.easeInOutQuint } }}
             />
-            <div className="mt-[3rem]">
+            {/* <div className="mt-[3rem]">
               <div className="contact-details">
                 <SocialLinks />
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
