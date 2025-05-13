@@ -4,32 +4,40 @@ import { useState, useRef } from "react";
 import Image from "next/image";
 
 const templates = [
+   {
+    title: "Modern AI Landing Page",
+    slug: "ai-landing-page",
+    category: "AI",
+    image: "/aiLPMain.png",
+    demoLink: "https://ai-landing-page-orcin.vercel.app/", 
+  },
   {
     title: "Gym Landing Page",
     slug: "gym-landing-page",
     category: "Gym",
     image: "/gymLpImage.png",
-    demoLink: "https://gym-landing-page-v1.vercel.app/", // changed from external link
+    demoLink: "https://gym-landing-page-v1.vercel.app/", 
   },
   {
     title: "Cafe Landing Page",
     slug: "cafe-landing-page",
     category: "Cafe",
     image: "/cafeLpImage.png",
-    demoLink: "https://cafe-landing-page-lilac.vercel.app/", // changed
+    demoLink: "https://cafe-landing-page-lilac.vercel.app/", 
   },
   {
     title: "Barber Shop Landing Page",
     slug: "barber-shop-landing-page",
     category: "Barber",
     image: "/barberLp.png",
-    demoLink: "https://barber-landing-page-pi.vercel.app/", // changed
+    demoLink: "https://barber-landing-page-pi.vercel.app/", 
   },
+
 
 ];
 
 
-const categories = ["All", "Gym", "Barber", "Cafe"];
+const categories = ["All", "Gym", "Barber", "Cafe", "AI"];
 
 export default function TemplatesShowcase() {
   const [activeCategory, setActiveCategory] = useState("All");
